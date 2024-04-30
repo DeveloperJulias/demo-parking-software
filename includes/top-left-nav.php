@@ -171,8 +171,8 @@
 
 
                                 <li class="sidebar-item"><a href="customer.php" class="sidebar-link"><i class=" fa fa-align-justify aria-hidden=" true"></i><span class="hide-menu">Customers</span></a></li>
-                                <li class="sidebar-item"><a href="brands.php" class="sidebar-link"><i class=" fa fa-file aria-hidden=" true"></i><span class="hide-menu">brands</span></a></li>
-                                <li class="sidebar-item"><a href="staffs.php" class="sidebar-link"><i class="mdi mdi-receipt"></i><span class="hide-menu"> Staffs </span></a></li>
+                                <li class="sidebar-item"><a href="brands.php" class="sidebar-link"><i class="fa fa-car"></i><span class="hide-menu">brands</span></a></li>
+                                <li class="sidebar-item"><a href="staffs.php" class="sidebar-link"><i class="fa fa-users"></i><span class="hide-menu"> Staffs </span></a></li>
 
 
 

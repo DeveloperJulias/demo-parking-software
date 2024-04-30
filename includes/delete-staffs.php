@@ -19,7 +19,7 @@ if (isset($_REQUEST['delete'])) {
         die("connectionERROR:"  . mysqli_connect_error());
     }
 
-    $sql = "UPDATE customers SET deleted_at ='$current_timestamp' WHERE id='$delete'";
+    $sql = "UPDATE staffs SET deleted_at ='$current_timestamp' WHERE id='$deletestaffs'";
 
     $outcome = mysqli_query($conn, $sql);
     if ($outcome) {

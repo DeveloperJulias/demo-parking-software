@@ -7,7 +7,7 @@ include 'includes/top-left-nav.php';
 <span style="float:right">
 
     <a href="javascript:void(0)" data-toggle="modal" data-target="#add-new-event" class="btn btn-primary">
-        <i class="fas fa-user"></i> Add Customer
+        <i class="fas fa-user-plus"></i> Add Customer
     </a>
 
 </span><br><br>
@@ -74,7 +74,7 @@ include 'includes/top-left-nav.php';
                 </thead>
 
                 <?php
-                $my_data = "SELECT * FROM customers  WHERE deleted_at IS NULL";
+                $my_data = "SELECT * FROM customers  WHERE deleted_at IS NULL  ORDER BY id DESC";
                 $parkresult = mysqli_query($conn, $my_data);
                 $i = 0;
                 foreach ($parkresult as $lots) {
@@ -106,16 +106,13 @@ include 'includes/top-left-nav.php';
                                 </div>
                                 <form action="includes/delete-customer.php" method="POST">
                                     <div class="modal-body">
-                                        <p>Are you Sure you want to <b>delete</b> <?= $lots['full_name'] ?></p>
-
-                                
+                                        <p style="color: red;" > <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>                                            IF you click <b>YES</b>,the information of <?= $lots['full_name'] ?> Won't appear again</p>
 
                                         <input id="" name="full_name" value="<?= $lots['id'] ?>" type="hidden" class="form-control" required>
 
-
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" name="delete" class="btn btn-secondary ">Yes</button>
+                                        <button type="submit" name="delete" class="btn btn-danger ">Yes</button>
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">close</button>
                                     </div>
                                 </form>
@@ -147,7 +144,7 @@ include 'includes/top-left-nav.php';
                                                     <input id="" name="phone" value="<?= $lots['phone'] ?>" type="text" class="form-control" required>
                                                     <input id="" name="updatecustomer" value="<?= $lots['id'] ?>" type="hidden" class="form-control" required>
 
-                           
+
                                                     <label for="">email<span class="text-danger">*</span></label>
                                                     <input id="" name="email" value="<?= $lots['email'] ?>" type="text" class="required form-control" required>
                                                     <input id="" name="updatecustomer" value="<?= $lots['id'] ?>" type="hidden" class="form-control" required>
@@ -171,7 +168,7 @@ include 'includes/top-left-nav.php';
                     <div class="modal fade none-border" id="return<?= $lots['id'] ?>">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                                <div class="modal-header">
+                                <div class="modal-header"> 
                                     <h4 class="modal-title"> <?= $lots['full_name'] ?></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>

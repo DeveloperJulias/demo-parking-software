@@ -4,11 +4,9 @@ include 'includes/header.php';
 include 'includes/top-left-nav.php'
 ?>
 
-
 <span style="float:right">
 
     <a href="parking-details.php" class="btn btn-primary"> <i class="fas fa-home"></i>Park Vehicle </a>
-
 
 </span><br><br>
 
@@ -28,9 +26,6 @@ include 'includes/top-left-nav.php'
                         <th>Parking Space</th>
                         <th>Phone</th>
                         <th>Service Provider</th>
-
-
-
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -62,6 +57,96 @@ include 'includes/top-left-nav.php'
                             <a href="javascript:void()" data-toggle="modal" data-target="#delete<?= $view_customer['id'] ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
                         </td>
                     </tr>
+
+                    <!-- DELETE  -->
+
+                    <div class="modal fade none-border" id="delete<?= $view_customer['id'] ?>">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">DELETE CUSTOMER: <?= $view_customer['full_name'] ?></h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <form action="includes/delete-customer.php" method="POST">
+                                    <div class="modal-body">
+                                        <p style="color: red;"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> IF you click <b>YES</b>,the information of <?= $view_customer['full_name'] ?> Won't appear again</p>
+
+                                        <input id="" name="full_name" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" name="delete" class="btn btn-danger ">Yes</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">close</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--------edit------>
+
+                    <div class="modal fade none-border" id="edit<?= $view_customer['id'] ?>">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Edit the Parking Information of<b style="color:blue"> <?= $view_customer['full_name'] ?></b></h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+
+                                <form action="includes/edit-customer.php" method="POST">
+                                    <div class=" container-fluid">
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="">Customer Name <span class="text-danger">*</span></label>
+                                                    <input id="" name="fullname" value="<?= $view_customer['full_name'] ?>" type="text" class="form-control" required>
+                                                    <input id="" name="updatecustomer" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
+
+                                                    <label for="">Vehicle Brand <span class="text-danger">*</span></label>
+                                                    <input id="" name="vehicle_brand" value="<?= $view_customer['vehicle_brand'] ?>" type="text" class="form-control" required>
+                                                    <input id="" name="updatecustomer" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
+
+                                                    <label for="">Number Plate <span class="text-danger">*</span></label>
+                                                    <input id="" name="number_plate" value="<?= $view_customer['number_plate'] ?>" type="text" class="form-control" required>
+                                                    <input id="" name="updatecustomer" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
+
+                                                    <label for="">Color <span class="text-danger">*</span></label>
+                                                    <input id="" name="color" value="<?= $view_customer['color'] ?>" type="text" class="form-control" required>
+                                                    <input id="" name="updatecustomer" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
+
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="">Parking Lot<span class="text-danger">*</span></label>
+                                                    <input id="" name="parking_lot" value="<?= $view_customer['parking_lot'] ?>" type="text" class="required form-control" required>
+                                                    <input id="" name="updatecustomer" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
+
+                                                    <label for="">Parking Space <span class="text-danger">*</span></label>
+                                                    <input id="" name="parking_space" value="<?= $view_customer['parking_space'] ?>" type="text" class="form-control" required>
+                                                    <input id="" name="updatecustomer" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
+
+                                                    <label for="">Phone <span class="text-danger">*</span></label>
+                                                    <input id="" name="phone" value="<?= $view_customer['phone'] ?>" type="text" class="form-control" required>
+                                                    <input id="" name="updatecustomer" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
+
+
+                                                    <label for="">Service Provider<span class="text-danger">*</span></label>
+                                                    <input id="" name="name" value="<?= $view_customer['name'] ?>" type="text" class="required form-control" required>
+                                                    <input id="" name="updatecustomer" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" name="update" class="btn btn-secondary">Save</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
 
                 <?php } ?>
 

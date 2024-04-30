@@ -99,19 +99,21 @@ include 'includes/top-left-nav.php'
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">DELETE CUSTOMER: <?= $lots['vehicle_brand'] ?></h4>
+                                    <h4 class="modal-title">DELETE VEHICLE BRAND: <?= $lots['vehicle_brand'] ?></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
                                 <form action="includes/delete-brands.php" method="post">
                                     <div class="modal-body">
-                                        <p>Are you Sure you want to <b>delete</b> <?= $lots['vehicle_brand'] ?></p>
+                                        
+                                        <p style="color: red;" > <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                            IF you click <b>YES</b>,vehicle brand  <?= $lots['vehicle_brand'] ?> Won't appear again</p>
 
                                         <input id="" name="deletebrand" value="<?= $lots['id'] ?>" type="hidden" class="form-control" required>
 
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" name="delete" class="btn btn-secondary ">Yes</button>
+                                        <button type="submit" name="delete" class="btn btn-danger ">Yes</button>
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">close</button>
                                     </div>
                                 </form>

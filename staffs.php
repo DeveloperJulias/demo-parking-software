@@ -111,16 +111,17 @@ include 'includes/top-left-nav.php';
                                 </div>
                                 <form action="includes/delete-staffs.php" method="POST">
                                     <div class="modal-body">
-                                        <p>Are you Sure you want to <b>delete</b> <?= $lots['name'] ?></p>
+                          
+                                        <p style="color: red;" > <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                            IF you click <b>YES</b>,Staff Member  <?= $lots['name'] ?> Won't appear again</p>
 
-                                
 
                                         <input id="" name="name" value="<?= $lots['id'] ?>" type="hidden" class="form-control" required>
 
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" name="delete" class="btn btn-secondary ">Yes</button>
+                                        <button type="submit" name="delete" class="btn btn-danger ">Yes</button>
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">close</button>
                                     </div>
                                 </form>
