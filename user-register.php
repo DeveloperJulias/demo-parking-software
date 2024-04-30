@@ -39,26 +39,39 @@
         <!-- ============================================================== -->
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
             <div class="auth-box bg-dark border-top border-secondary">
-                <div id="loginform">
+                <div>
                     <div class="text-center p-t-20 p-b-20">
-                        <span class="db">
-                            <img src="icon-logos/POTR.png" alt="homepage" width="100px" alt="homepage" class="light-logo" /> </span>
+                        <span class="db"><img src="assets/images/logo.png" alt="logo" /></span>
                     </div>
                     <!-- Form -->
-                    <form class="form-horizontal m-t-20" id="loginform" action="./includes/store-admin.php" method="post">
+                    <form class="form-horizontal m-t-20" action="./includes/store-registration.php" method="post">
                         <div class="row p-b-30">
                             <div class="col-12">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
                                     </div>
-                                    <input type="text" name="user_name" class="form-control form-control-lg" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required="">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Username" name="user_name"  aria-label="Username" aria-describedby="basic-addon1" required>
+                                </div>
+
+                                <!-- email -->
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Email Address" name="email_address" aria-label="Username" aria-describedby="basic-addon1" required>
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="fa fa-key"></i></span>
+                                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="text" name="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required="">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Password" name="password" aria-label="Password" aria-describedby="basic-addon1" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control form-control-lg" placeholder=" Confirm Password" name="confirm_password" aria-label="Password" aria-describedby="basic-addon1" required>
                                 </div>
                             </div>
                         </div>
@@ -66,37 +79,12 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <div class="p-t-20">
-                                        <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock m-r-5"></i> Lost password?</button>
-                                        <button class="btn btn-success float-right" type="submit" name="login">Login</button>
+                                        <button class="btn btn-block btn-lg btn-info" type="submit" name="register" >Sign Up</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
-                </div>
-                <div id="recoverform">
-                    <div class="text-center">
-                        <span class="text-white">Enter your e-mail address below and we will send you instructions how to recover a password.</span>
-                    </div>
-                    <div class="row m-t-20">
-                        <!-- Form -->
-                        <form class="col-12" action="dashboard.php">
-                            <!-- email -->
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
-                                </div>
-                                <input type="text" class="form-control form-control-lg" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
-                            <!-- pwd -->
-                            <div class="row m-t-20 p-t-20 border-top border-secondary">
-                                <div class="col-12">
-                                    <a class="btn btn-success" href="#" id="to-login" name="action">Back To Login</a>
-                                    <button class="btn btn-info float-right" type="button" name="action">Recover</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
@@ -129,20 +117,7 @@
     <script>
         $('[data-toggle="tooltip"]').tooltip();
         $(".preloader").fadeOut();
-        // ============================================================== 
-        // Login and Recover Password 
-        // ============================================================== 
-        $('#to-recover').on("click", function() {
-            $("#loginform").slideUp();
-            $("#recoverform").fadeIn();
-        });
-        $('#to-login').click(function() {
-
-            $("#recoverform").hide();
-            $("#loginform").fadeIn();
-        });
     </script>
-
 </body>
 
 </html>

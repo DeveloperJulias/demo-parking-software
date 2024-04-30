@@ -100,14 +100,16 @@ include 'includes/top-left-nav.php'
                                 </div>
                                 <form action="includes/delete-parking-lots.php" method="post">
                                     <div class="modal-body">
-                                        <p>Are you Sure you want to <b>delete</b> <?= $lots['parking_lot'] ?></p>
+
+                                    <p style="color: red;" > <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                            IF you click <b>YES</b>,Parking Lot  <?= $lots['parking_lot'] ?> Won't appear again</p>
 
                                         <input id="" name="deleteparkinglot" value="<?= $lots['id'] ?>" type="hidden" class="required form-control" required>
 
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" name="delete" class="btn btn-secondary ">Yes</button>
+                                        <button type="submit" name="delete" class="btn btn-danger ">Yes</button>
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">close</button>
 
                                     </div>

@@ -88,7 +88,6 @@ include 'includes/top-left-nav.php'
 
 
                         <td>
-                            <a href="javascript:void()" data-toggle="modal" data-target="#return<?= $lots['id'] ?>" class="btn btn-info"><i class="fa fa-refresh"></i> Return</a>
                             <a href="javascript:void()" data-toggle="modal" data-target="#edit<?= $lots['id'] ?>" class="btn btn-primary"><i class="fas fa-pencil-square-o"></i> Edit</a>
                             <a href="javascript:void()" data-toggle="modal" data-target="#delete<?= $lots['id'] ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
                         </td>
@@ -105,7 +104,7 @@ include 'includes/top-left-nav.php'
                                 <form action="includes/delete-brands.php" method="post">
                                     <div class="modal-body">
                                         
-                                        <p style="color: red;" > <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                        <p style="color: red;" > <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                             IF you click <b>YES</b>,vehicle brand  <?= $lots['vehicle_brand'] ?> Won't appear again</p>
 
                                         <input id="" name="deletebrand" value="<?= $lots['id'] ?>" type="hidden" class="form-control" required>

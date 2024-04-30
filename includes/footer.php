@@ -2,11 +2,7 @@
      <div class="col-md-12">
          <div class="card">
              <div class="card-body">
-
-
-
-
-
+                
                  <span style="text-align:center">
 
                      &copy;<?= date('Y') ?> Parking  Management Software Designed and Developed by <a href="https://www.nugsoft.com">Nugsoft Technologies</a>

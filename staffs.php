@@ -95,7 +95,6 @@ include 'includes/top-left-nav.php';
                         <td><?= $lots['title'] ?> </td>
 
                         <td>
-                            <a href="#" data-toggle="modal" data-target="#return<?= $lots['id'] ?>" class="btn btn-info"><i class="fa fa-refresh"></i> Return</a>
                             <a href="#" data-toggle="modal" data-target="#edit<?= $lots['id'] ?>" class="btn btn-primary"><i class="fas fa-pencil-square-o"></i> Edit</a>
                             <a href="#" data-toggle="modal" data-target="#delete<?= $lots['id'] ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
                         </td>
@@ -112,7 +111,7 @@ include 'includes/top-left-nav.php';
                                 <form action="includes/delete-staffs.php" method="POST">
                                     <div class="modal-body">
                           
-                                        <p style="color: red;" > <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                        <p style="color: red;" > <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                             IF you click <b>YES</b>,Staff Member  <?= $lots['name'] ?> Won't appear again</p>
 
 
@@ -175,38 +174,9 @@ include 'includes/top-left-nav.php';
 
                         </div>
                     </div>
-                    <!-- ...........return................ -->
+        
 
-                    <!-- <div class="modal fade none-border" id="return<?= $lots['id'] ?>">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title"> <?= $lots['full_name'] ?></h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                </div>
-
-                                <form action="return-vehicle_brands.php" method="POST">
-                                    <div class=" container-fluid">
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-
-                                                    <label for="">Customer<span class="text-danger">*</span></label>
-                                                    <input id="" name="name" value="<?= $lots['full_name'] ?>" type="text" class="required form-control" required>
-                                                    <input id="" name="editstaffs" value="<?= $lots['id'] ?>" type="hidden" class="required form-control" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" name="return" class="btn btn-secondary">Save</button>
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- ......end....return...... -->
+                         
                 <?php    } ?>
             </table>
 

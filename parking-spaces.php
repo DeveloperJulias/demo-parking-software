@@ -98,14 +98,16 @@ include 'includes/top-left-nav.php'
                                 </div>
                                 <form action="includes/delete-parking-spaces.php" method="post">
                                     <div class="modal-body">
-                                        <p>Are you Sure you want to <b>delete</b> <?= $spaces['parking_space'] ?></p>
+
+                                    <p style="color: red;" > <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                            IF you click <b>YES</b>,parking Space  <?= $spaces['parking_space'] ?> Won't appear again</p>
 
                                         <input id="" name="deletespace" value="<?= $spaces['id'] ?>" type="hidden" class="form-control" required>
 
 
                                     </div>
                                     <div class="modal-footer">
-                                    <button type="submit" name="delete" class="btn btn-secondary ">Yes</button>
+                                    <button type="submit" name="delete" class="btn btn-danger ">Yes</button>
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">close</button>
                                     </div>
                                 </form>
