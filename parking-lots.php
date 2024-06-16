@@ -9,7 +9,7 @@ include 'includes/top-left-nav.php'
 
     <a href="javascript:void(0)" data-toggle="modal" data-target="#add-new-event" class="btn btn-primary">
         <i class="ti-plus"></i> Add Parking Lot
-    </a>
+    </a> 
 
 </span><br><br>
 
@@ -70,7 +70,7 @@ include 'includes/top-left-nav.php'
                 </thead>
 
                 <?php
-                $my_data = "SELECT * FROM parking_lots WHERE deleted_at IS NULL ORDER BY id DESC";
+                $my_data = "SELECT * FROM parking_lots WHERE deleted_at IS NOT NULL ORDER BY id DESC";
                 $parkresult = mysqli_query($conn, $my_data);
                 $i = 0;
                 foreach ($parkresult as $lots) {
@@ -80,7 +80,7 @@ include 'includes/top-left-nav.php'
                     <tr>
                         <td><?= $i ?> </td>
                         <td><?= $lots['parking_lot'] ?> </td>
-                        <td><?= $lots['max_parking_spaces'] ?> </td>
+                        <td><?= $lots['max_parking_space'] ?> </td>
 
 
                         <td>
@@ -149,7 +149,7 @@ include 'includes/top-left-nav.php'
 
 
                                                     <label for="type">Maximum Parking Spaces*</label>
-                                                    <input id="" name="capacity" value="<?= $lots['max_parking_spaces'] ?>" type="text" class="required form-control" required>
+                                                    <input id="" name="capacity" value="<?= $lots['max_parking_space'] ?>" type="text" class="required form-control" required>
                                                     <input id="" name="updateparkinglot" value="<?= $lots['id'] ?>" type="hidden" class="form-control" required>
 
 

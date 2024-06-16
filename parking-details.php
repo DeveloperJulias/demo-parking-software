@@ -32,7 +32,7 @@ include 'includes/top-left-nav.php'
                                     <div class="form-group">
                                         <label>Customer Name <span class="text-danger">*</span></label>
                                         </select>
-                                        <select name="fullname" class="select2 form-control m-t-15" style="height: 36px;width: 100%;">
+                                        <select name="customername" class="select2 form-control m-t-15" style="height: 36px;width: 100%;">
 
 
                                             <optgroup>
@@ -43,7 +43,7 @@ include 'includes/top-left-nav.php'
                                             $result = mysqli_query($conn, $my_data);
                                             $only_details  = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                             foreach ($only_details  as $only_detail) { ?>
-                                                <option value="<?= $only_detail['id'] ?>"> <?= $only_detail['full_name'] ?> </option>
+                                                <option value="<?= $only_detail['id'] ?>"> <?= $only_detail['fullname'] ?> </option>
                                             <?php  } ?>
                                             </optgroup>
                                         </select>

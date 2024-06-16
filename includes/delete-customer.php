@@ -6,15 +6,16 @@ include '../includes/connect.php';
 
 if (isset($_REQUEST['delete'])) {
 
-    $fullname = $_POST['full_name'];
+    $fullname = $_POST['fullname'];
 
-    var_dump($id);
+    // var_dump($id);
     
 
     $current_timestamp = date('Y-m-d H:i:s');
 
-    $deletecustomer = $_POST['full_name'];
+    $deletecustomer = $_POST['fullname'];
 
+    
     if (!$conn) {
         die("connectionERROR:"  . mysqli_connect_error());
     }
@@ -24,7 +25,7 @@ if (isset($_REQUEST['delete'])) {
     $outcome = mysqli_query($conn, $sql);
     if ($outcome) {
         
-        header('Location:../customer.php');
+    header('Location:../customer.php');
     } else {
         echo "failed";
     }

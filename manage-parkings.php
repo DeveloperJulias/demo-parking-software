@@ -1,7 +1,7 @@
 <?php
 include 'includes/connect.php';
-include 'includes/header.php';
-include 'includes/top-left-nav.php'
+include './includes/header.php';
+include './includes/top-left-nav.php';
 ?>
 
 <span style="float:right">
@@ -42,7 +42,7 @@ include 'includes/top-left-nav.php'
                 ?>
                     <tr>
                         <td><?= $i ?> </td>
-                        <td><?= $view_customer['full_name'] ?> </td>
+                        <td><?= $view_customer['fullname'] ?> </td>
                         <td><?= $view_customer['vehicle_brand'] ?> </td>
                         <td><?= $view_customer['number_plate'] ?> </td>
                         <td><?= $view_customer['color'] ?> </td>
@@ -64,14 +64,14 @@ include 'includes/top-left-nav.php'
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">DELETE CUSTOMER: <?= $view_customer['full_name'] ?></h4>
+                                    <h4 class="modal-title">DELETE CUSTOMER: <?= $view_customer['fullname'] ?></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
-                                <form action="includes/delete-customer.php" method="POST">
+                                <form action="includes/delete-parkings.php" method="POST">
                                     <div class="modal-body">
-                                        <p style="color: red;"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> IF you click <b>YES</b>,the information of <?= $view_customer['full_name'] ?> Won't appear again</p>
+                                        <p style="color: red;"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> IF you click <b>YES</b>,the information of <?= $view_customer['fullname'] ?> Won't appear again</p>
 
-                                        <input id="" name="full_name" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
+                                        <input id="" name="deletefullname" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
 
                                     </div>
                                     <div class="modal-footer">
@@ -89,17 +89,17 @@ include 'includes/top-left-nav.php'
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Edit the Parking Information of<b style="color:blue"> <?= $view_customer['full_name'] ?></b></h4>
+                                    <h4 class="modal-title">Edit the Parking Information of<b style="color:blue"> <?= $view_customer['fullname'] ?></b></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
 
-                                <form action="includes/edit-customer.php" method="POST">
+                                <form action="includes/edit-parkings.php" method="POST">
                                     <div class=" container-fluid">
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="">Customer Name <span class="text-danger">*</span></label>
-                                                    <input id="" name="fullname" value="<?= $view_customer['full_name'] ?>" type="text" class="form-control" required>
+                                                    <input id="" name="fullname" value="<?= $view_customer['fullname'] ?>" type="text" class="form-control" required>
                                                     <input id="" name="updatecustomer" value="<?= $view_customer['id'] ?>" type="hidden" class="form-control" required>
 
                                                     <label for="">Vehicle Brand <span class="text-danger">*</span></label>

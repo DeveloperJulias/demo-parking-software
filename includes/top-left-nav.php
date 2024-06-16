@@ -1,4 +1,4 @@
-<?php include 'includes/header.php' ?>
+
 
 
 <body>
@@ -23,9 +23,12 @@
                     <!-- ============================================================== -->
                     <a class="navbar-brand" href="dashboard.php">
                         <!-- Logo icon -->
-                        <b class="logo-icon p-l-10">
-                            <img src="icon-logos/POTR.png" alt="homepage" width="100px" alt="homepage" class="light-logo" />
-                        </b>
+                        <b>
+                            <span>
+                <img src="icon-logos/safe-park-favicon-new.png"alt="" width="60em" height="60em" style="margin-right: 5px;">
+                </span>  
+            </b>
+            <h5 style="margin: 5Px;">SAFE PARK</h5>
                         <!-- <h3>OMEX<br>PARK</h3> -->
                     </a>
                     <!-- ============================================================== -->
@@ -124,7 +127,7 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="icon-logos/omex (1).jpg" alt="user" class="rounded-circle" width="31"></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="icon-logos/safe-park-favicon.jpeg" alt="user" class="rounded-circle" width="31";<h5 class="text-warning">Julias Muyambi</h5></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
@@ -156,21 +159,21 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php" aria-expanded="false"><i class="fas fa-th"></i><span class="hide-menu">DASHBOARD</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php" aria-expanded="false"><i class="fas fa-home"></i><span class="hide-menu">DASHBOARD</span></a></li>
                         <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Tables</span></a></li> -->
                         <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Full Width</span></a></li> -->
 
 
 
-                        <li class="sidebar-item"><a href="manage-parkings.php" class="sidebar-link"><i class="fas fa-subway"></i><span class="hide-menu">MANAGE PARKING</span></a></li>
+                        <li class="sidebar-item"><a href="./manage-parkings.php" class="sidebar-link"><i class="fas fa-subway"></i><span class="hide-menu">MANAGE PARKING</span></a></li>
 
 
 
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i></i><span class="hide-menu">CUSTOMERS </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="fas fa-cubes" aria-hidden="true"></i></i><span class="hide-menu">MAIN DETAILS </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
 
 
-                                <li class="sidebar-item"><a href="customer.php" class="sidebar-link"><i class=" fa fa-align-justify aria-hidden=" true"></i><span class="hide-menu">Customers</span></a></li>
+                                <li class="sidebar-item"><a href="customer.php" class="sidebar-link"><i class="fa fa-user-circle-o"></i><span class="hide-menu">Customers</span></a></li>
                                 <li class="sidebar-item"><a href="brands.php" class="sidebar-link"><i class="fa fa-car"></i><span class="hide-menu">brands</span></a></li>
                                 <li class="sidebar-item"><a href="staffs.php" class="sidebar-link"><i class="fa fa-users"></i><span class="hide-menu"> Staffs </span></a></li>
 
@@ -198,10 +201,12 @@
                         </li> -->
 
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Authentication </span></a>
+                        <li class="sidebar-item"><a href="./parking-invoice.php" class="sidebar-link"><i class="fab fa-blackberry"></i><span class="hide-menu"> PARKING INVOICE</span></a></li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">AUTHENTICATION </span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="index.php" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Login </span></a></li>
-                                <li class="sidebar-item"><a href="user-register.php" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Register </span></a></li>
+                                <li class="sidebar-item"><a href="index.php" class="sidebar-link"><i class="fas fa-unlock"></i><span class="hide-menu"> Login </span></a></li>
+                                <li class="sidebar-item"><a href="user-register.php" class="sidebar-link"><i class="fas fa-unlock-alt"></i><span class="hide-menu"> Register </span></a></li>
                             </ul> 
                         </li>
 

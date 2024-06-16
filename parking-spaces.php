@@ -65,7 +65,7 @@ include 'includes/top-left-nav.php'
                 </thead>
 
                 <?php
-                $data = "SELECT * FROM parking_spaces WHERE deleted_at IS  NULL ORDER BY id DESC ";
+                $data = "SELECT * FROM parking_spaces WHERE deleted_at IS NOT  NULL ORDER BY id DESC ";
                 $result_query = mysqli_query($conn, $data);
                 $i = 0;
                 foreach ($result_query as $spaces) {
@@ -124,7 +124,7 @@ include 'includes/top-left-nav.php'
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
 
-                                <form action="includes/edit-parking-spaces.php" method="POST">
+                                <form action="./includes/store-parking-spaces.php" method="POST">
                                     <div class=" container-fluid">
                                         <div class="modal-body">
                                             <div class="row">

@@ -1,4 +1,5 @@
 <?php
+include 'includes/connect.php';
 include 'includes/header.php';
 include 'includes/top-left-nav.php';
 ?>
@@ -22,7 +23,7 @@ include 'includes/top-left-nav.php';
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
 
-            <form action="includes/store-customer.php" method="POST">
+            <form action="./includes/store-customer.php" method="POST">
                 <div class=" container-fluid">
                     <div class="modal-body">
                         <div class="row">
@@ -30,7 +31,7 @@ include 'includes/top-left-nav.php';
 
 
                                 <label for="">Customer <span class="text-danger">*</span></label>
-                                <input id="" name="full_name" type="text" class="form-control" required>
+                                <input id="" name="fullname" type="text" class="form-control" required>
 
                                 <label for="">Phone <span class="text-danger">*</span></label>
                                 <input id="" name="phone" type="text" class="form-control" required>
@@ -74,18 +75,20 @@ include 'includes/top-left-nav.php';
                 </thead>
 
                 <?php
-                $my_data = "SELECT * FROM customers  WHERE deleted_at IS NULL  ORDER BY id DESC";
-                $parkresult = mysqli_query($conn, $my_data);
+                $my_data = "SELECT * FROM customers WHERE deleted_at IS NOT NULL ORDER BY id DESC";
+                $parkresult = mysqli_query($conn,$my_data);
+                if (!$parkresult) {
+                    die("Query Failed: " . mysqli_error($conn));
+                }
                 $i = 0;
-                foreach ($parkresult as $lots) {
-
-                    $i++;
+                    while ($lots = mysqli_fetch_assoc($parkresult)) {
+                        $i++;
                 ?>
                     <tr>
                         <td><?= $i ?> </td>
 
 
-                        <td><?= $lots['full_name'] ?> </td>
+                        <td><?= $lots['fullname'] ?> </td>
                         <td><?= $lots['phone'] ?> </td>
                         <td><?= $lots['email'] ?> </td>
 
@@ -94,20 +97,21 @@ include 'includes/top-left-nav.php';
                             <a href="#" data-toggle="modal" data-target="#delete<?= $lots['id'] ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
                         </td>
                     </tr>
+                    
                     <!-- BEGIN DELETE MODAL -->
 
                     <div class="modal fade none-border" id="delete<?= $lots['id'] ?>">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">DELETE CUSTOMER: <?= $lots['full_name'] ?></h4>
+                                    <h4 class="modal-title">DELETE CUSTOMER: <?= $lots['fullname'] ?></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
-                                <form action="includes/delete-customer.php" method="POST">
+                                <form action="./includes/delete-customer.php" method="POST">
                                     <div class="modal-body">
-                                        <p style="color: red;" > <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>                                            IF you click <b>YES</b>,the information of <?= $lots['full_name'] ?> Won't appear again</p>
+                                        <p style="color: red;" > <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>                                            IF you click <b>YES</b>,the information of <?= $lots['fullname'] ?> Won't appear again</p>
 
-                                        <input id="" name="full_name" value="<?= $lots['id'] ?>" type="hidden" class="form-control" required>
+                                        <input id="" name="fullname" value="<?= $lots['id'] ?>" type="hidden" class="form-control" required>
 
                                     </div>
                                     <div class="modal-footer">
@@ -126,7 +130,7 @@ include 'includes/top-left-nav.php';
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Edit <?= $lots['full_name'] ?></h4>
+                                    <h4 class="modal-title">Edit <?= $lots['fullname'] ?></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
 
@@ -136,7 +140,7 @@ include 'includes/top-left-nav.php';
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <label for="">Customer <span class="text-danger">*</span></label>
-                                                    <input id="" name="fullname" value="<?= $lots['full_name'] ?>" type="text" class="form-control" required>
+                                                    <input id="" name="fullname" value="<?= $lots['fullname'] ?>" type="text" class="form-control" required>
                                                     <input id="" name="updatecustomer" value="<?= $lots['id'] ?>" type="hidden" class="form-control" required>
 
                                                     <label for="">Phone <span class="text-danger">*</span></label>

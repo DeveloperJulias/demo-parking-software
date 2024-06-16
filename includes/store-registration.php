@@ -1,23 +1,32 @@
 <?php
 include '../includes/connect.php';
-if(isset($_POST['register'])){
-    $user_name = $_POST['user_name'];
-    $email_addres=$_POST['email_address'];
-    $password = $_POST['password'];
-    $confirm_password=$_POST['confirm_password'];
-   
-    if(!$conn){
-        die("connectionERROR" .mysqli_connect_error());
+
+if (isset($_POST['register'])) {
+    $first_name = $_POST['firstname'];
+    $last_name = $_POST['lastname'];
+    $email = $_POST['email'];
+    $user_name = $_POST['username'];
+    $create_password = $_POST['createpassword'];
+    $confirm_password = $_POST['confirmpassword'];
+
+    if ($create_password !== $confirm_password) {
+        die('Passwords do not match');
     }
 
-$mysql = "INSERT INTO login (user_name,email,password,confirm_password) VALUES
-('$user_name','$email_address','$password','$confirm_password')";
+    $hash_password = password_hash($create_password, PASSWORD_BCRYPT);
 
+    if (!$conn) {
+        die("Connection Error: " . mysqli_connect_error());
+    }
 
-$result= mysqli_query($conn,$mysql);
-if($result){
-    header("Location:../dashboard.php");
-}else{
-    echo "failed";
+    $querystore = "INSERT INTO register (first_name, last_name, user_name, email, create_password) VALUES ('$first_name', '$last_name', '$user_name', '$email', '$hash_password')";
+
+    $checkquery = mysqli_query($conn, $querystore);
+
+    if ($checkquery) {
+        header('Location: ../index.php');
+    } else {
+        echo 'Connection Failed';
+    }
 }
-}
+?>

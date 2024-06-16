@@ -20,7 +20,7 @@ $current_timestamp = date('Y-m-d H:i:s');
         die("connectionERROR:"  . mysqli_connect_error());
     }
 
-    $sql = "UPDATE  customers SET  full_name = '$fullname', phone = '$phone', email='$email', updated_at='$current_timestamp' WHERE id='$update'";
+    $sql = "UPDATE  customers SET  fullname = '$fullname', phone = '$phone', email='$email', updated_at='$current_timestamp' WHERE id='$update'";
     
     $outcome = mysqli_query($conn, $sql);
     if ($outcome) {

@@ -13,7 +13,7 @@ if (isset($_POST['save'])) {
     $service_provider = $_POST['service_provider'];
 
 
-    if (!$conn) {
+    if (!$conn) { 
         die("connectionERROR:"  . mysqli_connect_error());
     }
 

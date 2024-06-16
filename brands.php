@@ -84,12 +84,9 @@ include 'includes/top-left-nav.php'
                         <td><?= $lots['vehicle_brand'] ?> </td>
 
 
-
-
-
                         <td>
                             <a href="javascript:void()" data-toggle="modal" data-target="#edit<?= $lots['id'] ?>" class="btn btn-primary"><i class="fas fa-pencil-square-o"></i> Edit</a>
-                            <a href="javascript:void()" data-toggle="modal" data-target="#delete<?= $lots['id'] ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                            <a href="javascript:void()" data-toggle="modal" data-target="#delete<?= $lots['id'] ?>" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a>
                         </td>
                     </tr>
                     <!-- BEGIN DELETE MODAL -->
@@ -101,7 +98,7 @@ include 'includes/top-left-nav.php'
                                     <h4 class="modal-title">DELETE VEHICLE BRAND: <?= $lots['vehicle_brand'] ?></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
-                                <form action="includes/delete-brands.php" method="post">
+                                <form action="./includes/delete-brands.php" method="post">
                                     <div class="modal-body">
                                         
                                         <p style="color: red;" > <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
@@ -137,7 +134,7 @@ include 'includes/top-left-nav.php'
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
 
-                                <form action="includes/edit-brands.php" method="POST">
+                                <form action="./includes/edit-brands.php" method="POST">
                                     <div class=" container-fluid">
                                         <div class="modal-body">
                                             <div class="row">

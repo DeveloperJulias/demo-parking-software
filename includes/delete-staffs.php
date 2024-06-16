@@ -24,7 +24,7 @@ if (isset($_REQUEST['delete'])) {
     $outcome = mysqli_query($conn, $sql);
     if ($outcome) {
         
-        header('Location:../staffs.php');
+        // header('Location:../staffs.php');
     } else {
         echo "failed";
     }

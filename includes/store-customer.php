@@ -4,7 +4,7 @@
 include '../includes/connect.php';
 if (isset($_POST['save'])) {
 
-    $full_name = $_POST['full_name'];
+    $fullname = $_POST['fullname'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
 
@@ -13,8 +13,8 @@ if (isset($_POST['save'])) {
         die("connectionERROR:"  . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO customers ( full_name, phone, email ) 
-    VALUES ( '$full_name ','$phone ','$email ')";
+    $sql = "INSERT INTO customers ( fullname, phone, email ) 
+    VALUES ( '$fullname ','$phone ','$email ')";
 
     $outcome = mysqli_query($conn, $sql);
     if ($outcome) {

@@ -5,7 +5,7 @@
                 
                  <span style="text-align:center">
 
-                     &copy;<?= date('Y') ?> Parking  Management Software Designed and Developed by <a href="https://www.nugsoft.com">Nugsoft Technologies</a>
+                     &copy;<?= date('Y') ?> Safe Park.Designed and Developed by <a href="https://www.nugsoft.com">Nugsoft Technologies</a>
                  </span>
 
              </div>
