@@ -14,7 +14,6 @@ if (isset($_POST['save'])) {
             VALUES ( '$vehiclebrand ')";
     $outcome = mysqli_query($conn, $sql);
     if ($outcome) {
-        
         header('Location:../brands.php');
     } else {
         echo "failed";

@@ -19,6 +19,22 @@
             height: 100vh;
             overflow: hidden;
         }
+
+        /* Override for mobile */
+        @media (max-width: 767.98px) {
+            .auth-wrapper {
+                height: auto;
+                overflow: visible;
+            }
+
+            .auth-box {
+                padding: 20px;
+            }
+
+            .register-img {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -36,10 +52,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="auth-box  border-top border-light p-4" style="border-radius: 10px;">
+                        <div class="auth-box border-top border-light p-4" style="border-radius: 10px;">
                             <div class="text-center">
                                 <!-- Logo -->
-                                <img src="icon-logos/safe-park-favicon-new.png" alt="Logo" width="150em" height="150em" class="bg-">
+                                <img src="icon-logos/safe-park-favicon-new.png" alt="Logo" width="150em" height="150em">
                                 <h5 class="mt-3 text-primary">Register</h5>
                             </div>
                             <!-- Register Form -->
@@ -54,7 +70,7 @@
                                     <input type="text" class="form-control" placeholder="Username" name="username" required>
                                 </div>
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Email Address" name="email" required>
+                                    <input type="email" class="form-control" placeholder="Email Address" name="email" required>
                                 </div>
                                 <div class="mb-3">
                                     <input type="password" class="form-control" placeholder="Create Password" name="createpassword" required>
@@ -63,23 +79,18 @@
                                     <input type="password" class="form-control" placeholder="Confirm Password" name="confirmpassword" required>
                                 </div>
                                 <button type="submit" class="btn btn-block btn-lg btn-info" name="register">Register</button>
-
                             </form>
-
                         </div>
-
                     </div>
                     <div class="col-md-6">
                         <!-- Placeholder for image -->
-                        <div class="register-img" style="margin-top: 24em; ">
+                        <div class="register-img" style="margin-top: 24em;">
                             <img src="./icon-logos/cars (1).png" alt="" height="300em" width="">
                         </div>
                         <span class="text-primary">
-
-                            &copy;<?= date('Y') ?>Safe Park. Designed and Developed by <a href="https://www.nugsoft.com" class="text-warning">&#128187;Nugsoft Technologies</a>
+                            &copy;<?= date('Y') ?> Safe Park. Designed and Developed by <a href="https://www.nugsoft.com" class="text-warning">&#128187;Nugsoft Technologies</a>
                         </span>
                     </div>
-                    
                 </div>
             </div>
         </div>

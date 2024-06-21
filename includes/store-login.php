@@ -11,28 +11,25 @@ if (isset($_POST['login'])) {
         die("connectionERROR:"  . mysqli_connect_error());
     }
 
-    // Prepare and bind the SQL query with parameters
-    $sql = "SELECT * FROM register WHERE user_name = ?";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $user_name);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+    // Insecure SQL query (vulnerable to SQL injection)
+    $sql = "SELECT * FROM register WHERE user_name = '$user_name'";
+    $result = mysqli_query($conn, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         // Verify the password
         if (password_verify($password, $row['create_password'])) {
             // Password is correct, store user information in session variables
-            $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['user_name'] = $row['user_name'];
-            header("Location:../dashboard.php");
+            header("Location: ../dashboard.php");
             exit();
         } else {
-            echo "<span style='color:white ;background-color:orange;padding:1.5em;border-radius:10px;'>Incorrect username or password</span>";
-        
+            header("Location: ../index.php?error=Incorrect username or password");
+            exit();
         }
     } else {
-        echo "Incorrect username or password";
+        header("Location: ../index.php?error=Incorrect username or password");
+        exit();
     }
 }
 ?>

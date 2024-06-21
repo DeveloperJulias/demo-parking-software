@@ -13,6 +13,7 @@
     <title>Safe Park</title>
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./newstyles/newcss.css">
 </head>
 
 <body>
@@ -29,10 +30,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="auth-box  border-top border-light p-4" style="border-radius: 10px;">
+                        <div class="auth-box border-top border-light p-4">
                             <div class="text-center">
                                 <!-- Logo -->
-                                <img src="icon-logos/safe-park-favicon-new.png" alt="Logo" width="150em" height="150em" class="bg-">
+                                <img src="icon-logos/safe-park-favicon-new.png" alt="Logo" width="150em" height="150em">
                                 <h5 class="mt-3 text-primary">Login</h5>
                             </div>
                             <!-- Login Form -->
@@ -50,16 +51,14 @@
                                 <button class="btn btn-link mr-2"><a href="./password-reset.php">Lost password?</a></button>
                                 <button class="btn btn-link"><a href="./user-register.php">Register</a></button>
                             </div>
-
                         </div>
                     </div>
                     <div class="col-md-6">
                         <!-- Placeholder for image -->
-                        <div class="register-img" style="margin-top:13em; ">
-                            <img src="./icon-logos/cars (1).png" alt="" height="300em" width="">
+                        <div class="register-img" style="margin-top:13em;">
+                            <img src="./icon-logos/cars (1).png" alt="" height="300em">
                         </div>
                         <span class="text-primary">
-
                             &copy;<?= date('Y') ?> Safe Park. Designed and Developed by <a href="https://www.nugsoft.com" class="text-warning">&#128187;Nugsoft Technologies</a>
                         </span>
                     </div>
@@ -76,7 +75,22 @@
     <script>
         $('[data-toggle="tooltip"]').tooltip();
         $(".preloader").fadeOut();
+
+        // Function to show the error popup//
+        function showErrorPopup(message) {
+            alert(message);
+        }
+
+        // Check for the error parameter in the URL//
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const error = urlParams.get('error');
+            if (error) {
+                showErrorPopup(decodeURIComponent(error));
+            }
+        }
+ 
+       
     </script>
-</body>
 
 </html>

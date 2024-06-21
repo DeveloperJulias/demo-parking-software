@@ -8,7 +8,7 @@ include 'includes/top-left-nav.php'
 <span style="float:right">
 
     <a href="javascript:void(0)" data-toggle="modal" data-target="#add-new-event" class="btn btn-primary">
-        <i class="ti-plus"></i> Add Parking Lot
+    <i class="fas fa-home"></i> Add Parking Lot
     </a> 
 
 </span><br><br>
